@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+input::-ms-reveal {
+    display:none;
+}
+body{
+    background:  #242629;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-control::placeholder { 
+    color: #fffffe;
+    opacity: 1; 
+}
+
+input{
+    color: white !important;
+}
+
+
+.form-control::-ms-value { 
+    color: #fffffe;
+    opacity: 1; 
+}
+
+/* 
+.card{
+    padding: 20px;
+    background-color: #16161a;
+} */
+
+.forgot{
+    text-decoration: none;
+    color: #fffffe;
+}
+.Developed p{
+    margin-bottom: 0px;
+}
+
+
+.forgot:hover{
+    text-decoration: underline;
+    color: #fffffe;
+} 
+
+.forgot p{
+    font-weight: 700;
+    font-size: 15px;
+}
+.eyeslash,.eyeopen, .ceyeslash,.ceyeopen{
+    cursor: pointer;
+}
+
+.nodisplay{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .login{
+        margin-top: 150px;
+    }
+}
+@media (min-width: 1000px) {
+    .login{
+        margin-top: 0px;
+    }
+}

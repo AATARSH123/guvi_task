@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   
+</head>
+<body class="bg" onload="load()">
+    <div class="container">
+        <div class="row m-4 justify-content-evenly">
+            <div class="col-4" style="margin-top: 1px;">
+              <a href="#"><img src="./assets/back.png" alt="back" style="width: 30px;"></a>
+            </div>
+            <div class="col-4">
+              <h2 style="text-align: center; color:#fffffe; font-weight: 600;">Profile</h2>
+            </div>
+            <div class="col-4" style="display: flex; justify-content: flex-end;">
+                <button type="button" class="btn btn-sm" style="background: #7f5af0;color: #fffffe;" onclick="logout()">Log Out</button>
+            </div>
+          </div>
+          <div class="container pt-3">
+            <form action="" class="loginform" id="form">
+                <div class="row" style="margin-top: -20px; margin-left: 8px;">
+                    <div class="user-img row justify-content-center">
+                        <img src="./assets/user.png" alt="userprofile" id="photo" style="width: 130px;">
+                        <input type="file" id="file">
+                        <label for="file" id="uploadbtn"><img src="./assets/camera.png" alt="" style="width: 18px;" onclick="addphoto()"></label>
+                    </div>
+                </div>
+                <div class="input-group mb-3" style="border-width:2px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/usericon.png" alt="" style="width: 23px;"></span>
+                    <input class="form-control py-3 p-2" type="text" value="Username" aria-label="Disabled input example" disabled readonly id="username" style="color: #653939; background:#16161a;border: none;">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/mail.png" alt="" style="width: 20px;"></span>
+                    <input type="email" class="form-control py-3 p-2" style="background-color: #16161a;border: none;" placeholder="Email" id="email">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/name.png" alt="" style="width: 23px;"></span>
+                    <input type="text" class="form-control py-3 p-2 firstname" style="background-color: #16161a;border: none;" placeholder="First Name" id="fname">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/name.png" alt="" style="width: 23px;"></span>
+                    <input type="text" class="form-control py-3 p-2 lastname" style="background-color: #16161a;border: none;" placeholder="Last Name" id="lname">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/phone.png" alt="" style="width: 18px;"></span>
+                    <input type="number" class="form-control py-3 p-2 number" style="background-color: #16161a;border: none;" placeholder="Mobile Number"  minlength="10" maxlength="10" id="number">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/date-of-birth.png" alt="" style="width: 20px;"></span>
+                    <input type="date" class="form-control py-3 p-2 " style="background-color: #16161a;border: none;" placeholder="Date Of Birth" id="dob">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/address.png" alt="" style="width: 20px;"></span>
+                    <input type="text" class="form-control py-3 p-2 " style="background-color: #16161a;border: none;" placeholder="Address" id="address">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/city.png" alt="" style="width: 20px;"></span>
+                    <input type="text" class="form-control py-3 p-2 " style="background-color: #16161a;border: none;" placeholder="City" id="city">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/STATE.png" alt="" style="width: 20px;"></span>
+                    <input type="text" class="form-control py-3 p-2 " style="background-color: #16161a;border: none;" placeholder="State" id="state">
+                </div>
+                <div class="input-group mb-4" style=" border-width:1px; border-style:solid; border-radius: 6px;">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #16161a; border: none;"><img src="./assets/about.png" alt="" style="width: 20px;"></span>
+                    <textarea  class="form-control py-3 p-2 " style="color:white;background-color: #16161a;border: none;" placeholder="About" id="about"></textarea>
+                </div>
+                <div class="alert1" style="display: none;color:red;margin-top: -15px;margin-bottom: -10px"></div>
+               
+                
+                <div class="info2" style="display: none;color:red;margin-top: -15px;margin-bottom: -10px"></div>
+                
+                <div class="d-grid gap-2 mb-5">
+                    <button class="btn p-2" style="background: #7f5af0; color: #fffffe; font-weight: 700;" type="submit" id="save">Save Changes</button>
+                </div>
+            </form>
+          </div>
+    </div>
+
+
+
+   
+
+
+    <div style="height:100px">
+
+    </div>
+
+        
+
+
+    <script src="./js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+</html>
